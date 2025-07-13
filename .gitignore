@@ -7,5 +7,9 @@ eval_results/
 eval_data/
 *.egg-info/
 .env
-*.md
 *.log
+
+# Ignore all markdown files except README.md and originalREADME.md
+*.md
+!README.md
+!originalREADME.md
