@@ -7,6 +7,8 @@ class FinancialSituationMemory:
     def __init__(self, name, config):
         if config["backend_url"] == "http://localhost:11434/v1":
             self.embedding = "nomic-embed-text"
+            # Use dummy API key for Ollama
+            self.client = OpenAI(base_url=config["backend_url"], api_key="dummy-key-for-ollama")
         else:
             self.embedding = "text-embedding-3-small"
         self.client = OpenAI(base_url=config["backend_url"])
